@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nanum+Pen+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --mainTextColor: #4c808e;
+}
+
+.ibm-plex-serif-medium {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.inter-reg {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #fdecdf;
+  font-family: sans-serif;
+  color: var(--mainTextColor);
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%232b2b3100'/><path d='M10-6V6M10 14v12M26 10H14M6 10H-6' stroke-linecap='square' stroke-width='1' stroke='rgba(204%2C218%2C218%2C0.36)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+
+  /* Grid layout with two columns: sidebar + main */
+  display: grid;
+  grid-template-columns: 1fr 5fr; /* 220px sidebar, remaining for main */
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+aside {
+  background-color: #bbd3c2;
+  color: #fff;
+  padding: 1rem;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.menu {
+  list-style: none;
+  font-size: 2rem;
+  color: var(--mainTextColor);
+}
+.menu > * {
+  margin-bottom: 0.5rem;
+}
+main {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 12rem;
+}
+
+.subtext {
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+.gallery {
+  margin-top: 8vh;
+}
+.gallery-scroll {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 30%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Optional: hide scrollbar in Firefox */
+}
+.gallery-scroll::-webkit-scrollbar {
+  display: none; /* Optional: hide scrollbar in Chrome/Safari */
+}
+
+.gallery-element {
+  background-color: #e2d8c8;
+  aspect-ratio: 1 / 1;
+  border-radius: 4rem;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* space between image and caption if any */
+}
+
+.gallery-image {
+  aspect-ratio: 16 / 9;
+  width: 90%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bookmark {
+  position: absolute;
+  top: 0rem;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
+  padding-top: 0%;
+  background-color: #ffa99b;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  z-index: 2;
+}
+
+/* New Color Picker Styles */
+
+#toolbar {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.color-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.color-btn {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn:active {
+  transform: scale(1.05);
+}
+
+.color-btn:focus {
+  outline: none;
+}
+
+.color-btn[data-color="#4C808E"] {
+  border: 2px solid #ffffff; /* Adding a border for visibility on dark color */
+}
+
+.color-btn[data-color="#A4C094"] {
+  border: 2px solid #ffffff;
+}
+
+.color-btn[data-color="#FCA68F"] {
+  border: 2px solid #ffffff;
+}
+
+.color-btn[data-color="#EFD38D"] {
+  border: 2px solid #ffffff;
+}
+
+ul {
+  margin-top: 1rem;
+}
+
+/* General style for all list items */
+.menu > li {
+  padding-left: 1rem; /* Indentation for all list items */
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+/* Contact List Item */
+.contact {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Active state of the contact item */
+.contact.active {
+  background-color: white;
+}
+
+/* Contact Information Dropdown */
+.contact-info {
+  display: none;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #4c808e;
+}
+
+.contact-info p {
+  text-decoration: none;
+  color: #4c808e;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #4c808e;
+}
