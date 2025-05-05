@@ -47,7 +47,7 @@ document.querySelector(".el1").addEventListener("click", function () {
   <div class="post-text">
     <h2>SAAS Interface | Lexagle</h2>
     <p>
-In my first internship with Lexagle, a singaporean SAAS company, I collaborated with the product and engineering team to translate design briefs into functional user interfaces for their contract management platform. I was able to present design solutions and prototypes to stakeholders and I assisted in developing and maintaining documentation regarding design system guidelines. I was also able to provided quality assurance for launched features through close collaboration with a team of developers internationally.
+In my first internship with Lexagle, a Singaporean SAAS company, I collaborated with the product and engineering team to translate design briefs into functional user interfaces for their contract management platform. I was able to present design solutions and prototypes to stakeholders and I assisted in developing and maintaining documentation regarding design system guidelines. I was also able to provided quality assurance for launched features through close collaboration with a team of developers internationally.
 
     </p>
     </p>
